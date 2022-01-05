@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.2",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -12,15 +13,19 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
-    "eslint": "^8.3.0",
+    "autoprefixer": "^9.8.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
-    "prettier": "2.5.0"
+    "postcss": "^7.0.39",
+    "prettier": "2.5.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "cross-env TAILWIND_MODE=watch craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "prettify": "npx prettier --write ."
   },
